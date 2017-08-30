@@ -1,0 +1,20 @@
+You've learned a lot about web development so far. I want you to take a moment to write down your thoughts about web development here. Answer the following questions:
+  * What new skills have you learned?
+  * What has been easy?
+  * What has been difficult?
+  * How have you used the problem solving strategies from the first project to overcome challenges so far?
+
+---
+
+1) What new skills have you learned?
+	I've already had a good experience with HTML, so i've learned not too much of new things. For example, using tag <s> for striking (which i used to do olny with CSS text-decoration property before). Also, i learned how to use Chrome Front End Feedback extension to test my code.
+
+2) What has been easy?
+	Understanding the tree model, finding bugs in basic html layout.
+
+3) What has been difficult?
+	I've recently started practicing Vim instead of Sublime, so it was sometimes tricky to make a simple copy&paste and other standart text operations.
+
+4) How have you used the problem solving strategies from the first project to overcome challenges so far?	
+	I visited MDN and other recources like Stackoverflow to find answers for my questions, as i usually do. 
+	=)
