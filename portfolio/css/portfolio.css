@@ -14,7 +14,6 @@ h1 {
 p {
   font-family: "PFRegalDisplayPro-Italic", Georgia, serif;
   font-size: 1em;
-  font-style: italic;
   font-weight: normal;
   margin: 0;
 }
@@ -59,7 +58,6 @@ figure:hover img {
 
 figcaption span {
   font-family: "PFRegalDisplayPro-Italic", Georgia, serif;
-  font-style: italic;
   margin: 0;
 }
 
