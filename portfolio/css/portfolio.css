@@ -12,7 +12,7 @@ h1 {
 }
 
 p {
-  font-family: "PF Regal Display Pro", Helvetica, Arial, serif;
+  font-family: "PFRegalDisplayPro-Italic", Georgia, serif;
   font-size: 1em;
   font-style: italic;
   font-weight: normal;
@@ -58,7 +58,7 @@ figure:hover img {
 }
 
 figcaption span {
-  font-family: "PF Regal Display Pro", Helvetica, Arial, serif;
+  font-family: "PFRegalDisplayPro-Italic", Georgia, serif;
   font-style: italic;
   margin: 0;
 }
