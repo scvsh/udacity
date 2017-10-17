@@ -1,0 +1,15 @@
+
+@font-face {
+	font-family: 'Quinoa-Bold';
+	src: url('../fonts/hinted-subset-Quinoa-Bold.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PFRegalDisplayPro-Italic';
+	src: url('../fonts/hinted-subset-PFRegalDisplayPro-Italic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+

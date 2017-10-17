@@ -1,0 +1,125 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  margin: 0;
+  font-family: "Quinoa-Bold", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Quinoa-Bold", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+p {
+  font-family: "PF Regal Display Pro", Helvetica, Arial, serif;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+article {
+  grid-column: 1 / 4;
+  grid-row: 2;
+  padding: 5vh 5vw;
+}
+.row {
+  margin: 1em 0;
+  //background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+figure {
+  margin: 0;
+  margin-bottom: 2em;
+  display: block;
+  //background-color: #555555;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 47px -14px rgba(0, 0, 0, 0.35);
+  transition: 150ms ease-in-out;
+}
+
+figure:hover img {
+  transform: scale(1.02);
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 47px -14px rgba(0, 0, 0, 0.75);
+}
+
+figcaption span {
+  font-family: "PF Regal Display Pro", Helvetica, Arial, serif;
+  font-style: italic;
+  margin: 0;
+}
+
+header {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header img {
+  width: 3em;
+}
+
+footer {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #222;
+}
+
+footer a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: opacity 150ms ease-in-out;
+}
+
+footer a:hover {
+  opacity: 0.5;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.phone {
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  figure {
+    flex-basis: 23%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  figure {
+    flex-basis: 48%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  figure {
+    flex-basis: 100%;
+  }
+}
+
