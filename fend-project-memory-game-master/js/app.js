@@ -53,8 +53,6 @@ class Card {
         this.suit = suit;
         this.id = id;
         deck.innerHTML += `<li id="${ id }" class="card"><i class="fa fa-${ suit }"></i></li>`;
-        this.flip = e => this.flip(e);
-        this.element = document.getElementById(id);
         this.createHandler(id);
     };
 
