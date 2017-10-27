@@ -22,8 +22,10 @@ class Deck {
         this.open = [];
         this.fixed = [];
         this.render();
-        stopwatch.restart();
-
+        this.gameStarted = false;
+        stopwatch.stop();
+        stopwatch.reset();
+        stopwatch.print();
     }
 
     newGame() {
@@ -70,6 +72,10 @@ class Deck {
 
     move() {
         /* Make move */
+        if ( !MainDeck.gameStarted  ) {
+            MainDeck.gameStarted = true, 
+                stopwatch.restart(); 
+        };
         function openCard(id) {
             this.open.push(this.cards[id]);
         }
@@ -91,8 +97,6 @@ class Deck {
         if (this.moves == 8) {
             this.stars -= 1;
         } else if (this.moves == 16) {
-            this.stars -= 1;
-        } else if (this.moves == 24) {
             this.stars -= 1;
         };
     }

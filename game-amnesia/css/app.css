@@ -34,8 +34,12 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
+h2 {
+    text-align: center;
+}
 
 .popup {
+    max-width:90%;
     z-index: 2;
     height: 60%;
     background-color: white;
@@ -46,7 +50,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 15vw 10vh;
+    padding: 15vw 5vh;
     transition: 250ms ease-in-out;
 }
 
@@ -87,9 +91,11 @@ h1 {
     border-color: white;
     background: linear-gradient(90deg, #00f9c5 0%, #02b3e4 100%);
 }
+
 .stopwatch {
     padding-left: 20%;
 }
+
 /*
  * Styles for the deck of cards
  */
@@ -171,4 +177,37 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .deck {
+        width: 80vw;
+        height: 80vw;
+        min-height: 80vw;
+        background: linear-gradient(160deg, #f2f2f2 0%, #f1f0f3 100%);
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 50px 0 rgba(46, 61, 73, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        width: 20%;
+        margin: 1%;
+        height: 20%;
+        background: #FFFFFF;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 20px 0 rgba(46, 61, 73, 0.1);
+        transition: 250ms ease-in-out;
+    }
 }
