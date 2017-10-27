@@ -17,7 +17,9 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/bg.jpeg');
+    /* Background pattern from Unsplash / @jjying */
+    background-size: cover;
     font-family: 'Coda', cursive;
 }
 
@@ -33,6 +35,61 @@ h1 {
     font-weight: 300;
 }
 
+.popup {
+    z-index: 2;
+    height: 60%;
+    background-color: white;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 0 rgba(46, 61, 73, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15vw 10vh;
+    transition: 250ms ease-in-out;
+}
+
+.overlay {
+    transition: 250ms ease-in-out;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+.popup .final {
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    width: 40%;
+    margin-top: 2em;
+    padding: 0.5em;
+    font-size: 1em;
+    background: white;
+    border: 3px solid #f2f2f2;
+    border-radius: 50px;
+    text-align: center;
+    transition: 250ms ease-in;
+    cursor: pointer;
+    background: white;
+}
+
+.button:hover {
+    color: white;
+    border-color: white;
+    background: linear-gradient(90deg, #00f9c5 0%, #02b3e4 100%);
+}
+.stopwatch {
+    padding-left: 20%;
+}
 /*
  * Styles for the deck of cards
  */
@@ -40,10 +97,10 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #f2f2f2 0%, #f1f0f3 100%);
     padding: 32px;
     border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 0px 0px 50px 0 rgba(46, 61, 73, 0.2);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -54,7 +111,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
+    background: #FFFFFF;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -62,10 +119,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 0px 0px 20px 0 rgba(46, 61, 73, 0.1);
+    transition: 250ms ease-in-out;
 }
 
 .deck .card.open {
+    transition: 250ms ease-in-out;
     transform: rotateY(0);
     background: #02b3e4;
     cursor: default;
@@ -77,8 +136,14 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #00f9c5;
     font-size: 33px;
+}
+
+.deck .card.fail {
+    background: #ff3b30;
+    transition: 250ms ease-in-out;
+
 }
 
 /*
