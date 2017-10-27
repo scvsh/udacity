@@ -11,4 +11,3 @@
 ## Contributing
     There is nothing to contribute at the moment.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
