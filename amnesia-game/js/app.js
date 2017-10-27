@@ -1,6 +1,6 @@
-/*
- * Create a list that holds all of your cards
- */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Amnesia memory game 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
 
 const cardlist = ['diamond', 'paper-plane', 'anchor', 'bolt', 'heart', 'heart', 'cube', 'leaf', 'diamond', 'bicycle', 'bolt', 'leaf', 'anchor', 'bicycle', 'paper-plane', 'cube'];
 const deck = document.querySelector('.deck');
@@ -9,82 +9,11 @@ const moveboard = document.querySelector('.moves');
 const starboard = document.querySelector('.stars');
 const button = document.querySelector('.button');
 
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/* Shuffle function from http://stackoverflow.com/a/2450976
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
-
-function shuffle(array) {
-    var currentIndex = array.length,
-        temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-}
-
+/* Main gaming class
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/* Card class 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
-
-class Card {
-
-    constructor(suit, id) {
-        this.suit = suit;
-        this.id = id;
-        this.open = false;
-        this.element = document.createElement('li');
-        this.appendCard();
-        this.html = document.getElementById(this.id);
-    }
-
-    appendCard() {
-        let element = this.element;
-        element.id = this.id;
-        element.className = 'card';
-        element.innerHTML = `<i class="fa fa-${ this.suit }"></i></li>`;
-        element.addEventListener('click', MainDeck.move);
-        deck.appendChild(element);
-    }
-
-    flip() {
-        this.open = true;
-        this.html.classList.add('open');
-        this.html.classList.add('show');
-        this.element.removeEventListener('click', MainDeck.move);
-    }
-
-    fix() {
-        this.open = true;
-        this.html.classList.add('match');
-        this.element.removeEventListener('click', MainDeck.move);
-    }
-
-    close() {
-        this.open = false;
-        this.html.classList.remove('open');
-        this.html.classList.remove('show');
-        this.html.classList.remove('fail');
-        this.element.addEventListener('click', MainDeck.move);
-    }
-
-    fail() {
-        this.html.classList.add('fail');
-    }
-}
-
-
-
 
 class Deck {
-    /* Main gaming class, contains all gaming logic */
     constructor() {
         deck.innerHTML = '';
         this.moves = 0;
@@ -185,7 +114,79 @@ class Deck {
     }
 }
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Card class 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
+
+class Card {
+
+    constructor(suit, id) {
+        this.suit = suit;
+        this.id = id;
+        this.open = false;
+        this.element = document.createElement('li');
+        this.appendCard();
+        this.html = document.getElementById(this.id);
+    }
+
+    appendCard() {
+        let element = this.element;
+        element.id = this.id;
+        element.className = 'card';
+        element.innerHTML = `<i class="fa fa-${ this.suit }"></i></li>`;
+        element.addEventListener('click', MainDeck.move);
+        deck.appendChild(element);
+    }
+
+    flip() {
+        this.open = true;
+        this.html.classList.add('open');
+        this.html.classList.add('show');
+        this.element.removeEventListener('click', MainDeck.move);
+    }
+
+    fix() {
+        this.open = true;
+        this.html.classList.add('match');
+        this.element.removeEventListener('click', MainDeck.move);
+    }
+
+    close() {
+        this.open = false;
+        this.html.classList.remove('open');
+        this.html.classList.remove('show');
+        this.html.classList.remove('fail');
+        this.element.addEventListener('click', MainDeck.move);
+    }
+
+    fail() {
+        this.html.classList.add('fail');
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Shuffle function from http://stackoverflow.com/a/2450976
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
+
+function shuffle(array) {
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Helping functions
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
+
 
 function createDeck() {
     hidePopup();
